@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+	<title>Insert App Name...</title>
+	<link rel="stylesheet" type="text/css" href="appStyle.css">
+</head>
+<body>
+	<table id="dynamic">
+		<th>Date</th>
+		<th>Lesson</th>
+	</table>
+	
+	<input id="entryBox" type="text" placeholder="Enter Lesson" onkeydown="if (event.keyCode == 13) addEntry()">
+	<br>
+	<input id="addEntry" type="button" onclick="addEntry()" value="Add Entry">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="appScript.js"></script>
+</body>

@@ -5,11 +5,14 @@
 </head>
 <body>
 	
-	<input id="Journal" type="text" placeholder="What Happened Today?" onkeydown="if (event.keyCode == 13) addEntry()">
+	<input id="Journal" type="text" placeholder="What Happened Today?">
 	<br>
-	<input id="" type="text" placeholder="Enter Lesson" onkeydown="if (event.keyCode == 13) addEntry()">
+	<input id="Lesson" type="text" placeholder="Enter Lesson">
 	<br>
-	<input id="Submit" type="button" onclick="entrySubmission()" value="Add Entry">
+	
+	<form action="index.html">
+		<input id="Submit" type="submit" onclick="entrySubmission()" value="Submit">
+	</form>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="appScript.js"></script>

@@ -4,26 +4,30 @@
 	<link rel="stylesheet" type="text/css" href="appStyle.css">
 </head>
 <body>
-	<table id="dynamic">
+	<table id="dynamicTable">
 		<th>Date</th>
 		<th>Lesson</th>
 	</table>
-	
-	<!-- <input id="entryBox" type="text" placeholder="Enter Lesson" onkeydown="if (event.keyCode == 13) addEntry()"> -->
 	<br>
-
-	<!-- <input id="addEntry" type="button" onclick="href" value="Add Entry"> -->
-
-	
 	<form action="journal.html">
     	<input type="submit" value="Add Entry">
-	</form>
+    </form>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="appScript.js"></script>
 	<script>
-		var timestamp = getTimeStamp();
-		var lesson = localStorage.getItem(timestamp);
-		$('#dynamic').append('<tr><td>'+timestamp+'</td><td>'+lesson+'</td></tr>');	
+		$(document).ready(function(){
+			//The data includes the journal entry and the lesson learned. 
+			//They are split up by the delimter "EEKKS"
+			// $('#dynamicTable').append('<tr><td class="Timestamp">test1</td><td>test2</td></tr>');	
+			console.log(localStorage.getItem("Thu Apr 14 2016 23:1"));
+			var timestamp = getTimeStamp();
+			addTableEntry(timestamp);
+			
+			$( ".Timestamp" ).on( "click", function( event ) {
+		          // get back to where it was before if it was selected :
+		          console.log("you clicked this");
+		    });
+		});
 	</script>
 </body>

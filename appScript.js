@@ -1,13 +1,18 @@
 
-//adds new entry to the table
-function addEntry(){
-	var input = $("#entryBox").val();
-	if(input.trim()=="")
-		return;
-	$("#entryBox").val(""); //set it back to empty
-	var d = new Date();
-	var date = d.toDateString();
-	$('#dynamic').append('<tr><td>'+d+'</td><td>'+input+'</td></tr>');	
+//adds new entry to the table on the home page
+//using the key to access the value in local storage
+function addTableEntry(key){
+	var data = localStorage.getItem(key);
+	if(data!=null){
+		var lesson = data.split("EEKKS")[1];
+		$('#dynamicTable').append('<tr><td class="Timestamp">'+timestamp+'</td><td>'+lesson+'</td></tr>');	
+	}
+	// $('#dynamicTable').append('<tr><td>'+d+'</td><td>'+input+'</td></tr>');	
+}
+
+function openMiniWindow(filename){
+	// window.open(filename);
+	window.open(filename, "", "width=400,height=600");
 }
 
 function entrySubmission(){
@@ -16,10 +21,11 @@ function entrySubmission(){
 	if(entry.trim()=="" || lesson.trim()=="")
 		return;
 	$("#Journal").val(""); //set it back to empty
-	$("#Lesson").val(""); //set it back to empty
+	$("#Lesson").val(""); //''
+	//later on, split through delimter EEKKS
+	var data = entry + "EEKKS" + lesson;
 	var timestamp = getTimeStamp();
-	console.log(timestamp);
-	localStorage.setItem(getTimeStamp(), lesson);
+	localStorage.setItem(timestamp, data);
 }
 
 function getTimeStamp(){

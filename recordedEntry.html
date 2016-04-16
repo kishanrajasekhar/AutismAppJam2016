@@ -4,6 +4,25 @@
 	<link rel="stylesheet" type="text/css" href="appStyle.css">
 </head>
 <body>
-	<p id="recordedJournal"></p>
-	<p id="recordedLesson"></p>
+	<h3>Journal Entry</h3>
+	<p id="savedEntry"></p>
+	<h3>Lesson Learned</h3>
+	<p id="savedLesson"></p>
+	<br>
+	<input type="submit" value="Close" onclick="window.close()">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		//Sets the html content to the journal entry and the lesson learned
+		$(document).ready(function(){
+			var data = localStorage.getItem(localStorage.getItem("keyofkey"));
+			console.log(data);
+			var parts = data.split("EEKKS");
+			var entry = parts[0];
+			var lesson = parts[1];
+			console.log(entry+" "+lesson);
+			$("#savedEntry").html(entry);
+			$("#savedLesson").html(lesson);
+		});
+	</script>
 </body>

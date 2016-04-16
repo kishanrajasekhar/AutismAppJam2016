@@ -19,15 +19,19 @@
 		$(document).ready(function(){
 			//The data includes the journal entry and the lesson learned. 
 			//They are split up by the delimter "EEKKS"
+			
 			// $('#dynamicTable').append('<tr><td class="Timestamp">test1</td><td>test2</td></tr>');	
-			console.log(localStorage.getItem("Thu Apr 14 2016 23:1"));
 			var timestamp = getTimeStamp();
 			addTableEntry(timestamp);
 			
+			//When the user clicks on a data, show the entry
 			$( ".Timestamp" ).on( "click", function( event ) {
-		          // get back to where it was before if it was selected :
-		          console.log("you clicked this");
-		    });
+				  var key = this.innerHTML;
+				  console.log("key is " + key);
+				  localStorage.setItem("keyofkey", key);
+				  // console.log(localStorage.getItem(localStorage.getItem("keyofkey")));
+				  openMiniWindow("recordedEntry.html");
+			});
 		});
 	</script>
 </body>

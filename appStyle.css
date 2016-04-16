@@ -5,3 +5,8 @@ table {
 table, th, td {
     border: 1px solid black;
 }
+
+#Journal{
+	width:25%;
+	height:50px;
+}

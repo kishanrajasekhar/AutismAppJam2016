@@ -1,5 +1,6 @@
+var TABLE_COUNT = 10; //Number of entries the table should display
 
-//adds new entry to the table on the home page
+//Adds new entry to the table on the home page
 //using the key to access the value in local storage
 function addTableEntry(key){
 	var data = localStorage.getItem(key);
@@ -7,14 +8,16 @@ function addTableEntry(key){
 		var lesson = data.split("EEKKS")[1];
 		$('#dynamicTable').append('<tr><td class="Timestamp">'+timestamp+'</td><td>'+lesson+'</td></tr>');	
 	}
-	// $('#dynamicTable').append('<tr><td>'+d+'</td><td>'+input+'</td></tr>');	
 }
 
+//Opens another page (html file) in
+//another window (a mini window)
 function openMiniWindow(filename){
-	// window.open(filename);
-	window.open(filename, "", "width=400,height=600");
+	window.open(filename, "", "width=500,height=600");
 }
 
+//Saves the journal entry and lesson the user 
+//wrote in the local storage
 function entrySubmission(){
 	var entry = $("#Journal").val();
 	var lesson = $("#Lesson").val();
@@ -28,6 +31,9 @@ function entrySubmission(){
 	localStorage.setItem(timestamp, data);
 }
 
+//Return the time stamp in format
+//[Day of Week] Month Day Year Time
+//Where time format is Hour:Min (single or double digits, military time)
 function getTimeStamp(){
 	var d = new Date();
 	var date = d.toDateString();

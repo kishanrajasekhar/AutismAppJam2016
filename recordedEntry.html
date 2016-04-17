@@ -16,12 +16,19 @@
 		//Sets the html content to the journal entry and the lesson learned
 		$(document).ready(function(){
 			var data = localStorage.getItem(localStorage.getItem("keyofkey"));
-			console.log(data);
+			// console.log(data);
 			var parts = data.split("EEKKS");
 			var entry = parts[0];
+			var lines = entry.split("\n");
+			//replacing all \n with <br>
+			//later on, learn to use regex in javascipt...
+			var htmlString = "";
+			for(var i=0; i<lines.length; i++){
+				htmlString += lines[i];
+				htmlString += "<br>";
+			}
+			$("#savedEntry").html(htmlString);
 			var lesson = parts[1];
-			console.log(entry+" "+lesson);
-			$("#savedEntry").html(entry);
 			$("#savedLesson").html(lesson);
 		});
 	</script>

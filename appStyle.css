@@ -6,7 +6,11 @@ table, th, td {
     border: 1px solid black;
 }
 
-#Journal{
+.Timestamp:hover{
+	background-color:#58ACFA;
+	cursor: pointer;
+}
+
+#Lesson{
 	width:25%;
-	height:50px;
 }

@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="appStyle.css">
 </head>
 <body>
+	<h3 id="dateOfEntry"></h3>
 	<h3>Journal Entry</h3>
 	<p id="savedEntry"></p>
 	<h3>Lesson Learned</h3>
@@ -18,7 +19,9 @@
 	<script>
 		//Sets the html content to the journal entry and the lesson learned
 		$(document).ready(function(){
-			var data = localStorage.getItem(localStorage.getItem("keyofkey"));
+			var timestamp = localStorage.getItem("keyofkey");
+			$("#dateOfEntry").html(timestamp);
+			var data = localStorage.getItem(timestamp);
 			// console.log(data);
 			var parts = data.split("EEKKS");
 			var entry = parts[0];

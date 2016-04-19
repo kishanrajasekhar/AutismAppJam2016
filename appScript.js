@@ -1,4 +1,4 @@
-var TABLE_COUNT = 5; //Number of entries the table should display 
+var TABLE_COUNT = 8; //Number of entries the table should display 
 			
 //Adds new entry to the table on the home page
 //using the key to access the value in local storage
@@ -6,21 +6,23 @@ function addTableEntry(timestamp){
 	var data = localStorage.getItem(timestamp);
 	if(data!=null){
 		var lesson = data.split("EEKKS")[1];
-		$('#dynamicTable').append('<tr><td class="Timestamp">'+timestamp+'</td><td>'+lesson+'</td></tr>');	
+		$('#dynamicTable').prepend('<tr><td class="Timestamp">'+timestamp+'</td><td>'+lesson+'</td></tr>');	
 	}
 }
 
 //Displays the N most recently added entries,
 //even from previous sessions
 function displayMostRecent(n){
+	$('#dynamicTable th').remove();
 	for(var i=1; i<=n; i++){
 		var key = "temp" + i;
 		var timestamp = localStorage.getItem(key);
-		console.log(timestamp);
+		// console.log(timestamp);
 		if(timestamp==null)
 			break;
 		addTableEntry(timestamp);
 	}
+	$("#dynamicTable").prepend('<th>Date</th><th>Lesson</th>');
 }
 
 //Resets all the temp keys up to tempn
@@ -77,4 +79,16 @@ function getTimeStamp(){
 	var date = d.toDateString();
 	var time = d.getHours() + ":" + d.getMinutes()+":"+d.getSeconds();
 	return timestamp = date + " " + time;	
+}
+
+//Generates all possible clock times in a 24 hr day (military time)
+//O(24*60*60) = O(86400) = O(1)
+function generateClockTimes(){
+	for(var h=0; h<24; h++){
+		for(var m=0; m<60; m++){
+			for(var s=0; s<60; s++){
+				var time = h+":"+m+":"+s;
+			}
+		}
+	}
 }

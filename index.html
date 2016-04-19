@@ -19,8 +19,8 @@
 		$(document).ready(function(){
 			//The data includes the journal entry and the lesson learned. 
 			//They are split up by the delimter "EEKKS"
-
-			displaySessionTable();
+			
+			displayMostRecent(TABLE_COUNT);
 			
 			//When the user clicks on a data, show the entry
 			$( ".Timestamp" ).on( "click", function( event ) {

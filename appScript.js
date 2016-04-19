@@ -1,4 +1,4 @@
-//var TABLE_COUNT = 10; //Number of entries the table should display 
+var TABLE_COUNT = 5; //Number of entries the table should display 
 			
 //Adds new entry to the table on the home page
 //using the key to access the value in local storage
@@ -10,14 +10,28 @@ function addTableEntry(timestamp){
 	}
 }
 
-//Displays journal entries recently added (during the browser session)
-function displaySessionTable(){
-	console.log(Number(sessionStorage.journalCount));
-	for(var i=1; i<=Number(sessionStorage.journalCount); i++){
+//Displays the N most recently added entries,
+//even from previous sessions
+function displayMostRecent(n){
+	for(var i=1; i<=n; i++){
 		var key = "temp" + i;
-		console.log(key);
-		var timestamp = sessionStorage.getItem(key);
+		var timestamp = localStorage.getItem(key);
+		console.log(timestamp);
+		if(timestamp==null)
+			break;
 		addTableEntry(timestamp);
+	}
+}
+
+//Resets all the temp keys up to tempn
+function reinitializeTemps(n){
+	for (var i=1; i<n; i++){
+		var key = "temp"+i;
+		var key2 = "temp"+(i+1);
+		timestamp = localStorage.getItem(key2);
+		if(timestamp==null)
+			break;
+		localStorage.setItem(key,timestamp);
 	}
 }
 
@@ -39,16 +53,20 @@ function entrySubmission(){
 	//EEKKS is the delimter. Later, we split the string.
 	var data = entry + "EEKKS" + lesson;
 	var timestamp = getTimeStamp();
+	//Journal Entries are always saved with its corresponding timestamp
 	localStorage.setItem(timestamp, data);
-	//Temporary storage of recently added journal entries (added within the same browser session)
-	//Only lasts for single session
-    if (sessionStorage.journalCount) {
-    sessionStorage.journalCount = Number(sessionStorage.journalCount) + 1;
-	} else {
-	    sessionStorage.journalCount = 1;
-	}
-    console.log("entrySubmission: " + sessionStorage.journalCount);
-    sessionStorage.setItem("temp"+sessionStorage.journalCount, timestamp);
+	//Temporary keys are used to display the table in the home page
+	if(!localStorage.journalCount)
+		localStorage.journalCount = 0;
+    localStorage.journalCount = Number(localStorage.journalCount) + 1;
+    console.log("entrySubmission: " + localStorage.journalCount);
+    //temp keys will get new values 
+	//it recycles, so that the table in the home page won't grow too big
+    if(Number(localStorage.journalCount) > TABLE_COUNT){
+    	localStorage.journalCount = TABLE_COUNT;
+    	reinitializeTemps(TABLE_COUNT);
+    }
+    localStorage.setItem("temp"+localStorage.journalCount, timestamp);
 }
 
 //Return the time stamp in format

@@ -71,6 +71,14 @@ function entrySubmission(){
     localStorage.setItem("temp"+localStorage.journalCount, timestamp);
 }
 
+//Changes the data based on the timestamp
+function editSubmission(){
+	var timestamp = sessionStorage.getItem("editTime");
+	var entry = $("#EditJournal").val();
+	var lesson = $("#EditLesson").val();
+	var data = entry + "EEKKS" + lesson;
+	localStorage.setItem(timestamp,data);
+}
 
 //Return the time stamp in format
 //[Day of Week] Month Day Year Time

@@ -16,15 +16,19 @@
 	<h3>Lesson Learned</h3>
 	<p id="savedLesson"></p>
 	<br>
-	<form action="journalEdit.html">
-		<input type="submit" value="Edit">
-	</form>
-	<br>
+	
 	<form action="index.html">
 		<input type="submit" value="Back">
 	</form>
+	<form action="index.html" align="center">
+		<input id="deleteButton" type="submit" value="Delete">
+	</form>
+	<form action="journalEdit.html" align="right">
+		<input type="submit" value="Edit">
+	</form>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="appScript.js"></script>
 	<script>
 	
 		//Sets the html content to the journal entry and the lesson learned

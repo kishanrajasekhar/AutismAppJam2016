@@ -94,9 +94,22 @@ h3
 	line-height: 100%;
 }
 
+#EditJournal{
+	color: #757880;
+	font-family: Oxygen, sans-serif;
+	font-size: 1em;
+	line-height: 100%;
+}
 
 #Lesson{
 	/* width:25%; */
+	color: #757880;
+	font-family: Oxygen, sans-serif;
+	font-size: 1em;
+	line-height: 100%;
+}
+
+#EditLesson{
 	color: #757880;
 	font-family: Oxygen, sans-serif;
 	font-size: 1em;
@@ -119,6 +132,11 @@ h3
 	font-size: 1.5em;
 	line-height: 100%;
 	font-weight: bold;
+}
+
+#EntryOptions{
+	width:100%;
+	text-align:center;
 }
 
 

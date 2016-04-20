@@ -17,17 +17,17 @@ function displayMostRecent(n){
 	for(var i=1; i<=n; i++){
 		var key = "temp" + i;
 		var timestamp = localStorage.getItem(key);
-		// console.log(timestamp);
+		console.log(key+" = "+timestamp);
 		if(timestamp==null)
-			break;
+			continue;
 		addTableEntry(timestamp);
 	}
 	$("#dynamicTable").prepend('<th>Date</th><th>Lesson</th>');
 }
 
 //Resets all the temp keys up to tempn
-function reinitializeTemps(n){
-	for (var i=1; i<n; i++){
+function reinitializeTemps(start, n){
+	for (var i=start; i<n; i++){
 		var key = "temp"+i;
 		var key2 = "temp"+(i+1);
 		timestamp = localStorage.getItem(key2);
@@ -57,7 +57,15 @@ function entrySubmission(){
 	var timestamp = getTimeStamp();
 	//Journal Entries are always saved with its corresponding timestamp
 	localStorage.setItem(timestamp, data);
+	
+	//totalCount refers to the total number of journal entries
+	//may or may not be used, but still good to have
+	if(!localStorage.totalCount)
+		localStorage.totalCount = 0;
+    localStorage.totalCount = Number(localStorage.totalCount) + 1;
+    
 	//Temporary keys are used to display the table in the home page
+	//journalCount refers only to the number of entries displayed in table in the home page
 	if(!localStorage.journalCount)
 		localStorage.journalCount = 0;
     localStorage.journalCount = Number(localStorage.journalCount) + 1;
@@ -66,7 +74,7 @@ function entrySubmission(){
 	//it recycles, so that the table in the home page won't grow too big
     if(Number(localStorage.journalCount) > TABLE_COUNT){
     	localStorage.journalCount = TABLE_COUNT;
-    	reinitializeTemps(TABLE_COUNT);
+    	reinitializeTemps(1, Number(localStorage.journalCount));
     }
     localStorage.setItem("temp"+localStorage.journalCount, timestamp);
 }
@@ -79,6 +87,31 @@ function editSubmission(){
 	var data = entry + "EEKKS" + lesson;
 	localStorage.setItem(timestamp,data);
 }
+
+//Deletes the journal entry after user's confirmation
+$('#deleteButton').click(function(e)
+{
+    if(confirm("Are you sure that you want to delete this entry?"))
+    {
+        alert('Entry will be deleted.');
+        var timestamp = localStorage.getItem("keyofkey");
+        localStorage.totalCount = Number(localStorage.totalCount) - 1;
+        //If the deleted entry was part of the home page table
+        for(var i=1; i<=Number(localStorage.journalCount); i++){
+        	var t = "temp" + i;
+        	if(localStorage.getItem(t) == timestamp){
+        		reinitializeTemps(i, Number(localStorage.journalCount));
+        		localStorage.journalCount = Number(localStorage.journalCount) - 1;
+        		break;        
+        	}
+        }
+        localStorage.removeItem(timestamp);
+    }
+    else
+    {
+        e.preventDefault();
+    }
+});
 
 //Return the time stamp in format
 //[Day of Week] Month Day Year Time

@@ -6,7 +6,7 @@ function addTableEntry(timestamp){
 	var data = localStorage.getItem(timestamp);
 	if(data!=null){
 		var lesson = data.split("EEKKS")[1];
-		$('#dynamicTable').prepend('<tr><td class="Timestamp">'+timestamp+'</td><td>'+lesson+'</td></tr>');	
+		$('#dynamicTable').prepend('<tr><td class="Timestamp">'+timestamp+'</td><td class="myLesson">'+lesson+'</td></tr>');	
 	}
 }
 

@@ -1,11 +1,12 @@
 body {
-	background-color: #E3EDFC;
+	/* background-color: #A9D9CB; */
+	background-image: url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=148489407");
     margin-left:20em;
     margin-right:20em;
 }
 
 #title {
-	color: #2AB69D;
+	color: #344459;
 	font-family: Oswald, sans-serif;
 	text-align: center;
 	font-size: 3em;
@@ -15,7 +16,7 @@ body {
 h1
 {
 	width:25%;
-	color: #3515B0;
+	color: #344459;
 	font-family: Oxygen, sans-serif;
 	font-size: 2em;
 	line-height: 90%;
@@ -29,7 +30,7 @@ h1
 }
 
 .Timestamp:hover{
-	background-color:#58ACFA;
+	background-color:#B5EACB;
 	cursor: pointer;
 }
 
@@ -46,9 +47,9 @@ table {
 }
 
 table, th{
-	background-color: white;
+	background-color: #F2EAD0;
     border: 1px solid black;
-	color: #094150;
+	color: #344459;
 	font-family: Oswald, sans-serif;
 	text-align: center;
 	font-size: 1.5em;
@@ -57,21 +58,32 @@ table, th{
 
 td{
     border: 1px solid black;
-	color: #204865;
+	color: #344459;
 	font-family: Oxygen, sans-serif;
 	text-align: center;
 	font-size: 1em;
 	margin-top: 5%;
 }
 
+h2
+{
+	/* width:25%; */
+	color: #485F73;
+	font-family: Oxygen, sans-serif;
+	font-size: 1.5em;
+	line-height: 100%;
+	text-align: center;
+}
+
 h3
 {
 	/* width:25%; */
-	color: #1D0772;
-	font-family: Oswald, sans-serif;
-	font-size: 1.25em;
+	color: #485F73;
+	font-family: Oxygen, sans-serif;
+	font-size: 1.75em;
 	line-height: 100%;
 	text-align: center;
+	/* text-decoration: underline; */
 }
 
 #Journal{
@@ -93,18 +105,20 @@ h3
 
 #savedEntry{
 	/* width:25%; */
-	color: #3F2D74;
-	font-family: Oxygen, sans-serif;
-	font-size: 1em;
+	color: #485F73;
+	font-family: Oswald, sans-serif;
+	font-size: 1.5em;
 	line-height: 100%;
+	font-weight: bold;
 }
 
 #savedLesson{
 	/* width:25%; */
-	color: #3F2D74;
-	font-family: Oxygen, sans-serif;
-	font-size: 1em;
+	color: #485F73;
+	font-family: Oswald, sans-serif;
+	font-size: 1.5em;
 	line-height: 100%;
+	font-weight: bold;
 }
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>Entry</title>
+	<title>My Entry</title>
 	<!-- FONTS -->
 	<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
@@ -9,7 +9,8 @@
 	<!-- STYLESHEET -->
 	<link rel="stylesheet" type="text/css" href="appStyle.css"></head>
 <body>
-	<h3 id="dateOfEntry"></h3>
+	
+	<h2 id="dateOfEntry"></h2>
 	<h3>Journal Entry</h3>
 	<p id="savedEntry"></p>
 	<h3>Lesson Learned</h3>
@@ -20,14 +21,9 @@
 		<input type="submit" value="Back">
 	</form>
 	
-	<form action="journalEdit.html">
-		<input type="submit" value="Edit">
-	</form>
-
-	
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
+	
 		//Sets the html content to the journal entry and the lesson learned
 		$(document).ready(function(){
 			var timestamp = localStorage.getItem("keyofkey");

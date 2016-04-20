@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <head>
-	<title>Entry</title>
+	<title><span>Reflections</title>
 	<!-- FONTS -->
 	<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 	
 	<!-- STYLESHEET -->
-	<link rel="stylesheet" type="text/css" href="appStyle.css"></head>
+	<link rel="stylesheet" type="text/css" href="appStyle.css">
+</head>
 <body>
-	<h3 id="dateOfEntry"></h3>
-	<h3>Journal Entry</h3>
-	<p id="savedEntry"></p>
-	<h3>Lesson Learned</h3>
-	<p id="savedLesson"></p>
+	
+	<!-- <input id="Journal" type="textbox" placeholder="What Happened Today?"> -->
+	
+	<textarea id="EditJournal" rows="10" cols="50" value = "hello"></textarea>
 	<br>
-	<!-- <input type="submit" value="Close" onclick="window.close()"> -->
+	<input id="EditLesson" type="text" value = "hello">
+	<br>
+	
+	<br>
 	<form action="index.html">
-		<input type="submit" value="Back">
+		<input id="Submit" type="submit" onclick="entrySubmission()" value="Submit">
 	</form>
-	
-	<form action="journalEdit.html">
-		<input type="submit" value="Edit">
-	</form>
-
-	
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
@@ -42,11 +39,11 @@
 			var htmlString = "";
 			for(var i=0; i<lines.length; i++){
 				htmlString += lines[i];
-				htmlString += "<br>";
+				//htmlString += "<br>";
 			}
-			$("#savedEntry").html(htmlString);
+			$("#EditJournal").val(entry);
 			var lesson = parts[1];
-			$("#savedLesson").html(lesson);
+			$("#EditLesson").val(lesson);
 		});
 	</script>
 </body>

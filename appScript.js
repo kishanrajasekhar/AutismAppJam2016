@@ -71,14 +71,29 @@ function entrySubmission(){
     localStorage.setItem("temp"+localStorage.journalCount, timestamp);
 }
 
+//Changes the data based on the timestamp
+function editSubmission(){
+	var timestamp = sessionStorage.getItem("editTime");
+	var entry = $("#EditJournal").val();
+	var lesson = $("#EditLesson").val();
+	var data = entry + "EEKKS" + lesson;
+	localStorage.setItem(timestamp,data);
+}
+
 //Return the time stamp in format
 //[Day of Week] Month Day Year Time
-//Where time format is Hour:Min (single or double digits, military time)
+//Where time format is Hour:Min (single or double digits, imperial time)
 function getTimeStamp(){
 	var d = new Date();
+	var hours = d.getHours();
+	var minutes = d.getMinutes();
+	var ampm = hours >= 12 ? 'pm' : 'am';
+	hours = hours % 12;
+	hours = hours ? hours : 12; // the hour '0' should be '12'
+	minutes = minutes < 10 ? '0'+minutes : minutes;
+	var strTime = hours + ':' + minutes + ' ' + ampm;
 	var date = d.toDateString();
-	var time = d.getHours() + ":" + d.getMinutes()+":"+d.getSeconds();
-	return timestamp = date + " " + time;	
+	return timestamp = date + ", " + strTime;	
 }
 
 //Generates all possible clock times in a 24 hr day (military time)

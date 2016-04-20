@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <head>
-	<title>Insert App Name...</title>
+	<title>Reflections</title>
+	
+	<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+	
+	<!-- STYLESHEET -->
 	<link rel="stylesheet" type="text/css" href="appStyle.css">
 </head>
 <body>
+	<h1>Refections</h1>
 	<table id="dynamicTable">
 		<th>Date</th>
 		<th>Lesson</th>
@@ -19,8 +27,9 @@
 		$(document).ready(function(){
 			//The data includes the journal entry and the lesson learned. 
 			//They are split up by the delimter "EEKKS"
-
-			displaySessionTable();
+			console.log(getTimeStamp());
+			
+			displayMostRecent(TABLE_COUNT);
 			
 			//When the user clicks on a data, show the entry
 			$( ".Timestamp" ).on( "click", function( event ) {

@@ -1,9 +1,29 @@
-table {
-    border-collapse: collapse;
+body {
+	background-color: white;
 }
 
-table, th, td {
-    border: 1px solid black;
+#title {
+	color: #2AB69D;
+	font-family: Oswald, sans-serif;
+	text-align: center;
+	font-size: 3em;
+	margin-top: 5%;
+}
+
+h1
+{
+	width:25%;
+	color: #3515B0;
+	font-family: Oxygen, sans-serif;
+	font-size: 2em;
+	line-height: 90%;
+	text-align: center;
+}
+
+.front {
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
 }
 
 .Timestamp:hover{
@@ -11,6 +31,97 @@ table, th, td {
 	cursor: pointer;
 }
 
+
+table {
+    border-collapse: collapse;
+}
+
+table, th{
+    border: 1px solid black;
+	color: #094150;
+	font-family: Oswald, sans-serif;
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: 5%;
+}
+
+td{
+    border: 1px solid black;
+	color: #204865;
+	font-family: Oxygen, sans-serif;
+	text-align: center;
+	font-size: 1em;
+	margin-top: 5%;
+}
+
+h3
+{
+	width:25%;
+	color: #1D0772;
+	font-family: Oswald, sans-serif;
+	font-size: 1.25em;
+	line-height: 90%;
+	text-align: center;
+}
+
+#Journal{
+	width:25%;
+	color: #757880;
+	font-family: Oxygen, sans-serif;
+	font-size: 1em;
+	line-height: 90%;
+}
+
+
 #Lesson{
 	width:25%;
+	color: #757880;
+	font-family: Oxygen, sans-serif;
+	font-size: 1em;
+	line-height: 90%;
+}
+
+#Journal{
+	width:25%;
+	color: #757880;
+	font-family: Oxygen, sans-serif;
+	font-size: 1em;
+	line-height: 90%;
+}
+
+#savedEntry{
+	width:25%;
+	color: #3F2D74;
+	font-family: Oxygen, sans-serif;
+	font-size: 1em;
+	line-height: 90%;
+}
+
+#savedLesson{
+	width:25%;
+	color: #3F2D74;
+	font-family: Oxygen, sans-serif;
+	font-size: 1em;
+	line-height: 90%;
+}
+
+input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+	text-align:center;
 }

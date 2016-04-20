@@ -1,5 +1,7 @@
 body {
-	background-color: white;
+	background-color: #E3EDFC;
+    margin-left:20em;
+    margin-right:20em;
 }
 
 #title {
@@ -44,6 +46,7 @@ table {
 }
 
 table, th{
+	background-color: white;
     border: 1px solid black;
 	color: #094150;
 	font-family: Oswald, sans-serif;
@@ -63,71 +66,54 @@ td{
 
 h3
 {
-	width:25%;
+	/* width:25%; */
 	color: #1D0772;
 	font-family: Oswald, sans-serif;
 	font-size: 1.25em;
-	line-height: 90%;
+	line-height: 100%;
 	text-align: center;
 }
 
 #Journal{
-	width:25%;
-	color: #757880;
+ 	/* width:25%; */
+ 	color: #757880;
 	font-family: Oxygen, sans-serif;
 	font-size: 1em;
-	line-height: 90%;
+	line-height: 100%;
 }
 
 
 #Lesson{
-	width:25%;
+	/* width:25%; */
 	color: #757880;
 	font-family: Oxygen, sans-serif;
 	font-size: 1em;
-	line-height: 90%;
-}
-
-#Journal{
-	width:25%;
-	color: #757880;
-	font-family: Oxygen, sans-serif;
-	font-size: 1em;
-	line-height: 90%;
+	line-height: 100%;
 }
 
 #savedEntry{
-	width:25%;
+	/* width:25%; */
 	color: #3F2D74;
 	font-family: Oxygen, sans-serif;
 	font-size: 1em;
-	line-height: 90%;
+	line-height: 100%;
 }
 
 #savedLesson{
-	width:25%;
+	/* width:25%; */
 	color: #3F2D74;
 	font-family: Oxygen, sans-serif;
 	font-size: 1em;
-	line-height: 90%;
+	line-height: 100%;
 }
 
-input[type=text] {
-    padding:5px; 
-    border:2px solid #ccc; 
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
-input[type=text]:focus {
-    border-color:#333;
-}
 
 input[type=submit] {
     padding:5px 15px; 
     background:#ccc; 
     border:0 none;
     cursor:pointer;
+	font-family: Oxygen, sans-serif;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
 	text-align:center;

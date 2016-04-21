@@ -173,7 +173,18 @@ input[type=submit] {
 @media only screen and (max-device-width: 600px) {
 	body {
 		background-image: url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=148489407");
-	    margin-left:0%;
-	    margin-right:0%;
+	    margin-left:2%;
+	    margin-right:2%;
+	}
+	
+	.myLesson{
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  max-width: 10em;
+	}
+	
+	tr{
+		height:8em;
 	}
 }

@@ -41,6 +41,10 @@ h1
   max-width: 20em;
 }
 
+#scrollTable{
+	height: 25em;
+	overflow:auto;
+}
 
 table {
     border-collapse: collapse;
@@ -164,4 +168,12 @@ input[type=submit] {
 .twoButtons {
 	width:50%;
 	float:left;
+}
+
+@media only screen and (max-device-width: 600px) {
+	body {
+		background-image: url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=148489407");
+	    margin-left:0%;
+	    margin-right:0%;
+	}
 }

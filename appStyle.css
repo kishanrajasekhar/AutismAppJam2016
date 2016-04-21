@@ -177,6 +177,11 @@ input[type=submit] {
 	    margin-right:2%;
 	}
 	
+	#scrollTable{
+		height: 38em;
+		overflow:auto;
+	}
+	
 	.myLesson{
 	  white-space: nowrap;
 	  overflow: hidden;
@@ -185,6 +190,6 @@ input[type=submit] {
 	}
 	
 	tr{
-		height:8em;
+		height:7em;
 	}
 }

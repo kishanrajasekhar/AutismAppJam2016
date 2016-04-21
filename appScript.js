@@ -1,4 +1,11 @@
 var TABLE_COUNT = 1000; //Number of entries the table should display 
+	
+function clearData(){
+	if (confirm("Are you sure you would like to clear your data?") == true)
+	{localStorage.clear();
+		location.reload();
+	}
+}	
 			
 //Adds new entry to the table on the home page
 //using the key to access the value in local storage
@@ -93,7 +100,7 @@ $('#deleteButton').click(function(e)
 {
     if(confirm("Are you sure that you want to delete this entry?"))
     {
-        alert('Entry will be deleted.');
+        //alert('Entry will be deleted.');
         var timestamp = localStorage.getItem("keyofkey");
         localStorage.totalCount = Number(localStorage.totalCount) - 1;
         //If the deleted entry was part of the home page table

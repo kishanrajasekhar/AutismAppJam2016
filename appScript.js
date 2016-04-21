@@ -1,4 +1,4 @@
-var TABLE_COUNT = 8; //Number of entries the table should display 
+var TABLE_COUNT = 1000; //Number of entries the table should display 
 			
 //Adds new entry to the table on the home page
 //using the key to access the value in local storage

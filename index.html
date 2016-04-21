@@ -12,6 +12,7 @@
 </head>
 <body>
 	<h1>What I Learned</h1>
+	<input type="text" id="search" placeholder="Type to search">
 	<table id="dynamicTable">
 		<th>Date</th>
 		<th>Lesson</th>
@@ -39,6 +40,16 @@
 				  //in recordedEntry.html
 				  localStorage.setItem("keyofkey", key);
 				  window.location.href = "recordedEntry.html";
+			});
+			
+			var $rows = $('#dynamicTable tr');
+			$('#search').keyup(function() {
+			    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+			    
+			    $rows.show().filter(function() {
+			        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+			      return !~text.indexOf(val);
+			    }).hide();
 			});
 		});
 	</script>

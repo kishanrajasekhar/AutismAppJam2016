@@ -12,10 +12,15 @@
 </head>
 <body>
 	<h1>What I Learned</h1>
-	<table id="dynamicTable">
-		<th>Date</th>
-		<th>Lesson</th>
-	</table>
+	<input type="text" id="search" placeholder="Type to search">
+	<br><br>
+	<div style="height:25em;overflow:auto;">
+		<table id="dynamicTable">
+			<th>Date</th>
+			<th>Lesson</th>
+		</table>
+	</div>
+	
 	<br>
 	<form action="journal.html">
     	<input type="submit" value="Add Entry">
@@ -27,9 +32,9 @@
 		$(document).ready(function(){
 			//The data includes the journal entry and the lesson learned. 
 			//They are split up by the delimter "EEKKS"
-			console.log(getTimeStamp());
-			
-			displayMostRecent(TABLE_COUNT);
+	
+			console.log("number of recent entries: " + localStorage.journalCount);
+			displayMostRecent(Number(localStorage.journalCount));
 			
 			//When the user clicks on a data, show the entry
 			$( ".Timestamp" ).on( "click", function( event ) {
@@ -39,6 +44,16 @@
 				  //in recordedEntry.html
 				  localStorage.setItem("keyofkey", key);
 				  window.location.href = "recordedEntry.html";
+			});
+			
+			var $rows = $('#dynamicTable tr');
+			$('#search').keyup(function() {
+			    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+			    
+			    $rows.show().filter(function() {
+			        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+			      return !~text.indexOf(val);
+			    }).hide();
 			});
 		});
 	</script>

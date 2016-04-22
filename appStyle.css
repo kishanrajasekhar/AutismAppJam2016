@@ -1,8 +1,8 @@
 body {
 	/* background-color: #A9D9CB; */
 	background-image: url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=148489407");
-    margin-left:15%;
-    margin-right:15%;
+    margin-left:15%; /*15*/
+    margin-right:15%; /*15*/
 }
 
 #title {
@@ -66,7 +66,7 @@ td{
 	color: #344459;
 	font-family: Oxygen, sans-serif;
 	text-align: center;
-	font-size: 1em;
+	font-size: 1em; /*1em*/
 	margin-top: 5%;
 }
 
@@ -178,8 +178,25 @@ input[type=submit] {
 	}
 	
 	#scrollTable{
-		height: 38em;
+	height: 40em; /*->40em*/
 		overflow:auto;
+	}
+	
+	tr{
+		height:7em;
+	}
+	
+	td{
+	    border: 1px solid black;
+		color: #344459;
+		font-family: Oxygen, sans-serif;
+		text-align: center;
+		font-size: 1.8em; /*->2em*/
+		margin-top: 5%;
+	}
+	
+	.Timestamp{
+		width:40%;
 	}
 	
 	.myLesson{
@@ -189,7 +206,18 @@ input[type=submit] {
 	  max-width: 10em;
 	}
 	
-	tr{
-		height:7em;
+	input[type=submit] {
+	    padding:5px 15px; 
+	    background:#ccc; 
+	    border:0 none;
+	    cursor:pointer;
+		font-family: Oxygen, sans-serif;
+		font-size: 1.5em;
+		font-weight:bold;
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px; 
+		text-align:center;
+		height:4em;
+		width: 10em;
 	}
 }

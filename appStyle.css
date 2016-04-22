@@ -112,7 +112,7 @@ h3
 #EditJournal{
 	color: #757880;
 	font-family: Oxygen, sans-serif;
-	font-size: 1em;
+	font-size: 3em;
 	line-height: 100%;
 	width:100%;
 }
@@ -120,7 +120,7 @@ h3
 #EditLesson{
 	color: #757880;
 	font-family: Oxygen, sans-serif;
-	font-size: 1em;
+	font-size: 3em;
 	line-height: 100%;
 	width:100%;
 }
@@ -181,6 +181,11 @@ input[type=submit] {
 		font-size: 4em;
 	}
 	
+	#search{
+		font-size:3em;
+		width: 15em;
+	}
+	
 	#scrollTable{
 	height: 40em; /*->40em*/
 		overflow:auto;
@@ -210,9 +215,36 @@ input[type=submit] {
 	  max-width: 10em;
 	}
 	
-	#search{
-		font-size:3em;
-		width: 15em;
+	#Journal{
+	 	color: #757880;
+		font-family: Oxygen, sans-serif;
+		font-size: 3em;
+		line-height: 100%;
+		width:100%;
+	}
+	
+	#Lesson{
+		color: #757880;
+		font-family: Oxygen, sans-serif;
+		font-size: 3em;
+		line-height: 100%;
+		width:100%;
+	}
+	
+	#savedEntry{
+		color: #485F73;
+		font-family: Oswald, sans-serif;
+		font-size: 2em;
+		line-height: 100%;
+		font-weight: bold;
+	}
+	
+	#savedLesson{
+		color: #485F73;
+		font-family: Oswald, sans-serif;
+		font-size: 2em;
+		line-height: 100%;
+		font-weight: bold;
 	}
 	
 	input[type=submit] {

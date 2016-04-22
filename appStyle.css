@@ -177,6 +177,10 @@ input[type=submit] {
 	    margin-right:2%;
 	}
 	
+	#indexTitle{
+		font-size: 4em;
+	}
+	
 	#scrollTable{
 	height: 40em; /*->40em*/
 		overflow:auto;
@@ -204,6 +208,11 @@ input[type=submit] {
 	  overflow: hidden;
 	  text-overflow: ellipsis;
 	  max-width: 10em;
+	}
+	
+	#search{
+		font-size:3em;
+		width: 15em;
 	}
 	
 	input[type=submit] {

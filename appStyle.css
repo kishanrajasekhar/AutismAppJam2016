@@ -239,6 +239,22 @@ input[type=submit] {
 		width:100%;
 	}
 	
+	#EditJournal{
+		color: #757880;
+		font-family: Oxygen, sans-serif;
+		font-size: 3em;
+		line-height: 100%;
+		width:100%;
+	}
+	
+	#EditLesson{
+		color: #757880;
+		font-family: Oxygen, sans-serif;
+		font-size: 3em;
+		line-height: 100%;
+		width:100%;
+	}
+	
 	#savedEntry{
 		color: #485F73;
 		font-family: Oswald, sans-serif;

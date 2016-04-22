@@ -215,6 +215,14 @@ input[type=submit] {
 	  max-width: 10em;
 	}
 	
+	#dateOfEntry{
+		font-size: 2em;
+	}
+	
+	h3{
+		font-size: 3em;
+	}
+	
 	#Journal{
 	 	color: #757880;
 		font-family: Oxygen, sans-serif;
@@ -234,7 +242,7 @@ input[type=submit] {
 	#savedEntry{
 		color: #485F73;
 		font-family: Oswald, sans-serif;
-		font-size: 2em;
+		font-size: 3em;
 		line-height: 100%;
 		font-weight: bold;
 	}
@@ -242,7 +250,7 @@ input[type=submit] {
 	#savedLesson{
 		color: #485F73;
 		font-family: Oswald, sans-serif;
-		font-size: 2em;
+		font-size: 3em;
 		line-height: 100%;
 		font-weight: bold;
 	}

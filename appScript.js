@@ -95,6 +95,13 @@ function editSubmission(){
 	localStorage.setItem(timestamp,data);
 }
 
+//Reads the journal entry and returns interpretations of the situation
+function interpretEntry(){
+	var entry = "Your friend probably did not get the score he wanted, so that is why he is feeling upset.";
+	entry += "That's why it was hard for him to say congratulations.";
+	alert(entry);
+} 
+
 //Deletes the journal entry after user's confirmation
 $('#deleteButton').click(function(e)
 {
@@ -135,16 +142,4 @@ function getTimeStamp(){
 	var strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
 	var date = d.toDateString();
 	return timestamp = date + ", " + strTime;	
-}
-
-//Generates all possible clock times in a 24 hr day (military time)
-//O(24*60*60) = O(86400) = O(1)
-function generateClockTimes(){
-	for(var h=0; h<24; h++){
-		for(var m=0; m<60; m++){
-			for(var s=0; s<60; s++){
-				var time = h+":"+m+":"+s;
-			}
-		}
-	}
 }

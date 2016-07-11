@@ -53,8 +53,9 @@ function openMiniWindow(filename){
 //Saves the journal entry and lesson the user 
 //wrote in the local storage
 function entrySubmission(){
-	var entry = $("#Journal").val();
-	var lesson = $("#Lesson").val();
+	//replace method to get rid of any html tags
+	var entry = $("#Journal").val().replace(/<\/?[^>]+(>|$)/g, ""); 
+	var lesson = $("#Lesson").val().replace(/<\/?[^>]+(>|$)/g, "");
 	if(entry.trim()=="" || lesson.trim()=="")
 		return;
 	$("#Journal").val(""); //set it back to empty
